@@ -8,3 +8,5 @@ function App(){
 }
 
 export default App
+
+// const response = await fetch("https://httpbin.org/delay/5")

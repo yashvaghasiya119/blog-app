@@ -152,15 +152,11 @@ const forgotPassword = async (req, res) => {
 
 const resetPassword = async (req, res) => {
   try {
-    const { email, otp, newPassword, confirmPassword } = req.body;
+    const { email, otp, password } = req.body;
 
     // Validate input
-    if (!email || !otp || !newPassword || !confirmPassword) {
+    if (!email || !otp || !password ) {
       return res.status(400).json({ message: 'All fields are required.' });
-    }
-
-    if (newPassword !== confirmPassword) {
-      return res.status(400).json({ message: 'Passwords do not match.' });
     }
 
     // Find user by email
@@ -176,7 +172,7 @@ const resetPassword = async (req, res) => {
 
     // Hash new password
     const salt = await bcrypt.genSalt(10);
-    user.password = await bcrypt.hash(newPassword, salt);
+    user.password = await bcrypt.hash(password, salt);
 
     // Clear OTP
     user.otp = null;

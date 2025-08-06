@@ -13,10 +13,14 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cookieParser());
-app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(fileUpload({ useTempFiles: true }));
+app.use(cors({
+  origin: 'http://localhost:5173', // 👈 exact frontend origin
+  credentials: true, // allow sending cookies/tokens
+}));
+
 
 // Sample route
 app.get("/", (req, res) => {
