@@ -1,15 +1,17 @@
 const express = require("express");
-const { createComment, getCommentsByPost, updateComment } = require("../controllers/comment");
+const { createComment, getCommentsByPost, updateComment, deleteComment } = require("../controllers/comment");
 const { authenticateUser } = require("../middelwere/auth.middelwere");
 
 const router = express.Router();
 
 // create blogs api
-router.post("/:blogid", authenticateUser ,createComment)
+router.post("/:id", authenticateUser ,createComment)
 
 // for see comment for perticure blogs
-router.get("/:blogid", authenticateUser ,getCommentsByPost)
+router.get("/:id", authenticateUser ,getCommentsByPost)
 
 router.post("/update/:id", authenticateUser ,updateComment)
+
+router.delete("/:id", authenticateUser ,deleteComment)
 
 module.exports = router

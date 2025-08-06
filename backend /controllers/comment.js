@@ -5,7 +5,7 @@ const { time } = require('../utils/time');
 // create comment
 const createComment = async (req, res) => {
     try {
-        const postId = req.params.blogid;
+        const postId = req.params.id;
         const userId = req.user.id;
         const { content } = req.body;
         console.log("🚀 ~ createComment ~ req.body:", req.body)
@@ -44,7 +44,7 @@ const createComment = async (req, res) => {
 // get comment controller for single blog
 const getCommentsByPost = async (req, res) => {
     try {
-        const postId = req.params.blogid;
+        const postId = req.params.id;
 
         const comments = await Comment.find({ postId })
             .populate('userId', 'username firstName lastName email')
@@ -98,9 +98,7 @@ const updateComment = async (req, res) => {
     }
 };
 
-const Comment = require('../models/Comment');
 
-// DELETE /api/comments/:id - Delete a comment (only by creator)
 const deleteComment = async (req, res) => {
   try {
     const commentId = req.params.id;
