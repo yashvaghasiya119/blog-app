@@ -8,6 +8,7 @@ import { Register } from "../pages/auth/register";
 import { PublicLayout } from "../layout/publiclayout";
 import { PrivateRoute } from "../layout/privatelayout";
 import { AddBlog } from "../pages/blogs/addblog";
+import { AllBlog } from "../pages/blogs/allblog";
 
 export function AppRoutes() {
   const route = createBrowserRouter([
@@ -48,6 +49,14 @@ export function AppRoutes() {
           element: (
             <PrivateRoute>
               <AddBlog/>
+            </PrivateRoute>
+          ),
+        },
+        {
+          path: "/blog",
+          element: (
+            <PrivateRoute>
+              <AllBlog/>
             </PrivateRoute>
           ),
         },
