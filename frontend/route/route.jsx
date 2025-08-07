@@ -7,6 +7,7 @@ import { ResetPassword } from "../pages/auth/resetpassword";
 import { Register } from "../pages/auth/register";
 import { PublicLayout } from "../layout/publiclayout";
 import { PrivateRoute } from "../layout/privatelayout";
+import { AddBlog } from "../pages/blogs/addblog";
 
 export function AppRoutes() {
   const route = createBrowserRouter([
@@ -39,6 +40,14 @@ export function AppRoutes() {
           element: (
             <PrivateRoute>
               <ResetPassword />
+            </PrivateRoute>
+          ),
+        },
+        {
+          path: "/blog/add",
+          element: (
+            <PrivateRoute>
+              <AddBlog/>
             </PrivateRoute>
           ),
         },

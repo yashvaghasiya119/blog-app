@@ -9,7 +9,7 @@ export function Navbar() {
       </div>
       <ul className="navbar-links">
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/blog">Blog</Link></li>
+        <li><Link to="/blog/add">Add Blog</Link></li>
         {/* <li><Link to="/categories">Categories</Link></li> */}
         <li><Link to="/about">About</Link></li>
         {/* <li><Link to="/contact">Contact</Link></li> */}

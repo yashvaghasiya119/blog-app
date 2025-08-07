@@ -1,0 +1,321 @@
+/* .add-blog-container {
+    min-height: 100vh;
+    background: linear-gradient(to right, #003973, #e5e5be);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    animation: fadeIn 0.8s ease;
+  }
+  
+  .add-blog-form {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+    animation: slideUp 1s ease-in-out;
+  }
+  
+  .add-blog-form h2 {
+    text-align: center;
+    color: #003c5f;
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: #00bcd4;
+  }
+  
+  .add-tag-btn {
+    margin-top: 0.5rem;
+    padding: 8px 12px;
+    background-color: #00bcd4;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-tag-btn:hover {
+    background-color: #019bb3;
+  }
+  
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+    gap: 6px;
+  }
+  
+  .tag {
+    background-color: #00bcd4;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+  }
+  
+  .image-preview {
+    margin-top: 1rem;
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #00bcd4;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #019bb3;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      background-color: #000;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+   */
+
+   /* Container Styles */
+.add-blog-container {
+    min-height: 100vh;
+    background: linear-gradient(120deg, #f6f9fc, #ddeaf6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    animation: fadeIn 0.6s ease-in-out;
+  }
+  
+  /* Form Styles */
+  .add-blog-form {
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 650px;
+    animation: slideUp 0.5s ease-in-out;
+  }
+  
+  .add-blog-form h2 {
+    text-align: center;
+    color: #0a3d62;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    font-size: 1.8rem;
+  }
+  
+  /* Input Fields */
+  .form-group {
+    margin-bottom: 1.7rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s, box-shadow 0.3s;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: #00bcd4;
+    box-shadow: 0 0 6px rgba(0, 188, 212, 0.4);
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  /* Hashtag Section */
+  .add-tag-btn {
+    margin-top: 8px;
+    padding: 10px 14px;
+    background-color: #00bcd4;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease;
+    width: fit-content;
+  }
+  
+  .add-tag-btn:hover {
+    background-color: #019bb3;
+  }
+  
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 0.8rem;
+  }
+  
+  .tag {
+    background-color: #00bcd4;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+  }
+  
+  .tag::after {
+    content: "×";
+    margin-left: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  /* Image Preview */
+  .image-preview {
+    margin-top: 1rem;
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  }
+  
+  /* Submit Button */
+  .submit-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #00bcd4;
+    color: white;
+    font-weight: bold;
+    font-size: 1.05rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 1.5rem;
+  }
+  
+  .submit-btn:hover {
+    background-color: #019bb3;
+  }
+  
+  .dropzone {
+    padding: 30px;
+    border: 2px dashed #007bff;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    color: #555;
+    transition: background-color 0.3s, border-color 0.3s;
+    margin-top: 8px;
+  }
+  
+  .dropzone.active {
+    background-color: #f0f8ff;
+    border-color: #0056b3;
+  }
+  
+  .image-preview {
+    margin-top: 10px;
+    max-width: 100%;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      background-color: #fff;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .add-blog-form {
+      padding: 2rem 1.5rem;
+    }
+  }
+  
