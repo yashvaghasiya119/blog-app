@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../style/auth/resetpassword.css";
-import { api } from "../../../lib/axios";
+import { api } from "../../lib/axios";
 
 export function ResetPassword() {
   const [email, setEmail] = useState("");
@@ -31,7 +31,6 @@ export function ResetPassword() {
       console.log("Reset successful:", response.data);
     } catch (error) {
       console.error("Reset failed:", error.response?.data || error.message);
-      alert("Password reset failed. Please try again.");
     } finally {
       setLoading(false); // 🔸 Stop loading regardless of outcome
     }

@@ -46,7 +46,7 @@
 
 import React, { useState } from "react";
 import "../style/auth/forgotpassword.css";
-import { api } from "../../../lib/axios";
+import { api } from "../../lib/axios";
 
 export function ForgotPassword() {
   const [email, setEmail] = useState("");

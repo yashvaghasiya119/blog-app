@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../style/auth/login.css";
-import { api } from "../../../lib/axios";
+import { api } from "../../lib/axios";
 
 export function Login() {
   const [formData, setFormData] = useState({

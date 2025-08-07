@@ -11,7 +11,6 @@ export function Home() {
 
   return (
     <>
-      <Navbar />
       <div className="home">
         <header className="hero" data-aos="fade-down">
           <h1>Welcome to My Blog</h1>
