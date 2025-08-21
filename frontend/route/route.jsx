@@ -9,6 +9,8 @@ import { PublicLayout } from "../layout/publiclayout";
 import { PrivateRoute } from "../layout/privatelayout";
 import { AddBlog } from "../pages/blogs/addblog";
 import { AllBlog } from "../pages/blogs/allblog";
+import { MyBlog } from "../pages/blogs/myblog";
+import { SingleBlog } from "../pages/blogs/singelblog";
 
 export function AppRoutes() {
   const route = createBrowserRouter([
@@ -27,6 +29,12 @@ export function AppRoutes() {
         {
           path: "/auth/login",
           element: <Login />,
+        },
+        {
+          path: "/blog/:id",
+          element: (
+              <SingleBlog/>
+          ),
         },
         {
           path: "/auth/forgot-password",
@@ -60,6 +68,16 @@ export function AppRoutes() {
             </PrivateRoute>
           ),
         },
+        {
+          path: "/blog/me",
+          element: (
+            <PrivateRoute>
+              <MyBlog/>
+            </PrivateRoute>
+          ),
+        },
+       
+        
         
     ],
     

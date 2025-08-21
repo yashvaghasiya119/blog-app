@@ -1,5 +1,5 @@
 const express = require("express");
-const { addBlog, getAllBlogs, getMyBlogs, updateBlog } = require("../controllers/blog");
+const { addBlog, getAllBlogs, getMyBlogs, updateBlog, getSingleBlog } = require("../controllers/blog");
 const { authenticateUser } = require("../middelwere/auth.middelwere");
 const router = express.Router();
 
@@ -10,5 +10,7 @@ router.post("/updateblog/:id", authenticateUser ,updateBlog)
 router.get("/allblogs",authenticateUser, getAllBlogs)
 
 router.get("/myblogs", authenticateUser, getMyBlogs);
+
+router.get("/:id", getSingleBlog)
 
 module.exports = router
