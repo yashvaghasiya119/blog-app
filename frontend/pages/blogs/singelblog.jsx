@@ -25,6 +25,33 @@ export function SingleBlog() {
   }
 
   return <>
-   
+    <div className="single-blog-container">
+      <h1 className="single-blog-title">{blog.title}</h1>
+
+      {blog.image && (
+        <div className="single-blog-image-wrapper">
+          {!imageLoaded && <div className="image-loading">Loading image...</div>}
+
+          <img
+            className={`single-blog-image blog-image ${imageLoaded ? "visible" : "hidden"}`}
+            src={blog.image}
+            alt={blog.title}
+            onLoad={() => setImageLoaded(true)}
+          />
+        </div>
+      )}
+
+      <p className="single-blog-body">{blog.body}</p>
+
+      {blog.hashtags && blog.hashtags.length > 0 && (
+        <div className="hashtags">
+          {blog.hashtags.map((tag, index) => (
+            <span key={index} className="hashtag">
+              #{tag}
+            </span>
+          ))}
+        </div>
+      )}
+    </div>
   </>;
 }
