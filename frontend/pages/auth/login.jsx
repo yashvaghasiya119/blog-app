@@ -138,8 +138,8 @@ export function Login() {
     }
   };
 
-  return (
-    <div className="login-container">
+  return <>
+    {/* <div className="login-container">
       <form className="login-form" onSubmit={handleSubmit}>
         <h2>Login to Your Account</h2>
 
@@ -187,6 +187,6 @@ export function Login() {
           {loading ? "Logging in..." : "Login"}
         </button>
       </form>
-    </div>
-  );
+    </div> */}
+    </>
 }
