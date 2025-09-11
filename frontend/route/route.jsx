@@ -11,6 +11,7 @@ import { AddBlog } from "../pages/blogs/addblog";
 import { AllBlog } from "../pages/blogs/allblog";
 import { MyBlog } from "../pages/blogs/myblog";
 import { SingleBlog } from "../pages/blogs/singelblog";
+import { MoblieValidation } from "../pages/moblievalidator";
 
 export function AppRoutes() {
   const route = createBrowserRouter([
@@ -76,7 +77,14 @@ export function AppRoutes() {
             </PrivateRoute>
           ),
         },
+        
        
+        {
+          path: "/moblie-validation",
+          element: (
+            <MoblieValidation/>
+          ),
+        },
         
         
     ],
