@@ -7,7 +7,7 @@ const blogRoute = require("./routes/blog.route");
 const commentRoute = require("./routes/comment.route");
 const fileUpload = require('express-fileupload');
 
-
+const {phone} = require('phone');
 require('dotenv').config();
 
 const app = express();
@@ -37,7 +37,10 @@ app.use("/blog",blogRoute)
 
 app.use("/comment",commentRoute)
 
-
+app.get('/phone',(req,res)=>{
+  const phones = phone('+91 9512959171', {country: 'india'}); 
+  return res.json({phones})
+})
 
 // Connect MongoDB and Start Server
 mongoose.connect(process.env.MONGO_URI, {
